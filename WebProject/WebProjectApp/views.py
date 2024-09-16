@@ -1,18 +1,18 @@
 from django.shortcuts import render, HttpResponse
 
 def home(request):
-    return HttpResponse('Inicio')
+    return render(request, 'WebProjectApp/home.html')
 
 def services(request):
-    return HttpResponse('Servicios')
+    return render(request, 'WebProjectApp/services.html')
 
 def shop(request):
-    return HttpResponse('Tienda')
+    return render(request, 'WebProjectApp/shop.html')
 
 def blog(request):
-    return HttpResponse('Blog')
+    return render(request, 'WebProjectApp/blog.html')
 
 def contact(request):
-    return HttpResponse('Contacto')
+    return render(request, 'WebProjectApp/contact.html')
 
 

@@ -31,6 +31,7 @@ python manage.py migrate
 ### 1. Estructura de las carpetas
 
 **Web Project**
+-`settings.py`. Debemos incluir un registro de cada una de nuestras apps.
 - `urls.py`. Apunta al archivo de mismo nombre de cada una de las aplicaciones (en esta caso solo hay una). Es una forma de tener organizadas las urls. 
 
 **Web Project App**
