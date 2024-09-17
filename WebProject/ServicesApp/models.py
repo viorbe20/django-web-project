@@ -3,7 +3,7 @@ from django.db import models
 class Service(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField(max_length=100)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='ServicesApp')
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
     
