@@ -1,8 +1,8 @@
 from django.db import models
 
 class Service(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField(max_length=100)
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=100)
     image = models.ImageField(upload_to='ServicesApp')
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
@@ -13,4 +13,4 @@ class Service(models.Model):
         verbose_name_plural = ('services') # Model name that should be displayed in the admin level
     
     def __str__(self):
-        return self.title
+        return self.name
