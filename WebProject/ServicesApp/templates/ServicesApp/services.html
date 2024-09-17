@@ -1,21 +1,28 @@
-{% extends "WebProjectApp/base.html" %}
+{% extends "WebProjectApp/base.html" %} 
 
-{% load static %}
+{% load static %} 
 
-{% block content %}
+{% block content %} 
 
-  {% for service in all_services %}
+{% for service in all_services %}
 
-  <div><p>
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img
+        class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+        src="{{service.image.url}}"
+        alt="" style="width: 50%;"/>
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-lower">{{ service.name }}</span>
+          <span class="section-heading-upper">{{ service.description }}</span>
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2 style='color:white'>{{ service.name }}</h2>
-
-    <p style='color:white'>{{ service.description }}</p>
-
-    <p><img style='width:100px'src="{{service.image.url}}"></p>
-
-  </p></div>
-
-  {% endfor %}
+{% endfor %} 
 
 {% endblock %}
