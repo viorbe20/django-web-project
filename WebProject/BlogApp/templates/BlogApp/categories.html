@@ -31,7 +31,6 @@
 
 {% endfor %} 
 
-
 <section>
   <div style="width: 75%; margin: auto; text-align: center; color: white;">
   
@@ -41,8 +40,8 @@
   
     {% for category in post.categories.all %}
   
-      {{category.name}} &nbsp;&nbsp;&nbsp;|
-  
+      <a href="{% url 'Categoria' category.id %}">{{ category.name }}</a> &nbsp;&nbsp;&nbsp;
+
     {% endfor %}
   
   {% endfor %}
