@@ -5,7 +5,7 @@ class Service(models.Model):
     description = models.TextField(max_length=100)
     image = models.ImageField(upload_to='ServicesApp')
     createdAt = models.DateTimeField(auto_now_add=True)
-    updatedAt = models.DateTimeField(auto_now=True)
+    updatedAt = models.DateTimeField(auto_now_add=True)
     
     # Defines model options that determines how Django handles the model at the database and admin level.
     class Meta:
