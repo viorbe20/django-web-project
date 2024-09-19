@@ -1,14 +1,23 @@
 {% extends "WebProjectApp/base.html" %}
+
 {% load static %}
 
 {% block content %}
 
 <div class="contact-form-container">
+
+    {% comment "" %}If {% endcomment %}
+    {% if "valido" in request.GET %}
+    
+    <p>El formulario se ha enviado correctamente.</p>
+
+    {% endif %}
+    
     <form method="post" class="contact-form">
         {% csrf_token %}
         {% for field in contact_form %}
             <div class="form-group">
-                {{ field.label_tag }}
+                {{ field.label_tag }} 
                 {{ field }}
                 {% if field.errors %}
                     <div class="error-message">{{ field.errors }}</div>
@@ -18,4 +27,4 @@
         <button type="submit" class="submit-button">Enviar</button>
     </form>
 </div>
-{% endblock %}
+{% endblock %} 
