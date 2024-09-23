@@ -69,7 +69,7 @@ class Cart:
                     self.delete_product(product)
                 break
         self.save_cart()
-        
+                
     def empty_cart(self):
         """
         Empty the entire cart by clearing all items and marking the session as modified.
