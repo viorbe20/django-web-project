@@ -16,8 +16,8 @@ def contact(request):
             email_message = EmailMessage(
                 "Mensaje de contacto",
                 f"De: {name}\n\nE-mail: {email}\n\nMensaje:\n\n{message}",
-                'vobernier@gmail.com', # Source email 
-                ["destinatario@example.com"], # Target email 
+                'source@example.com', # Source email 
+                ["target@example.com"], # Target email 
                 reply_to=[email]
             )
 
