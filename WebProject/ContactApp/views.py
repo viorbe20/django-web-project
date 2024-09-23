@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm
-
-# Create your views here.
+from django.core.mail import EmailMessage 
 
 def contact(request):
     contact_form = ContactForm()
@@ -10,12 +9,27 @@ def contact(request):
         contact_form = ContactForm(data=request.POST)
         
         if contact_form.is_valid():
-            name = request.POST.get('Nombre')
-            email = request.POST.get('Email')
-            message = request.POST.get('Mensaje')
+            name = contact_form.cleaned_data['name'] 
+            email = contact_form.cleaned_data['email'] 
+            message = contact_form.cleaned_data['message']  
             
-            # Redirect to contact
-            
-            return redirect("/contacto/?valido")
-            
+            email_message = EmailMessage(
+                "Mensaje de contacto",
+                f"De: {name}\n\nE-mail: {email}\n\nMensaje:\n\n{message}",
+                'vobernier@gmail.com', # Source email 
+                ["destinatario@example.com"], # Target email 
+                reply_to=[email]
+            )
+
+            try:
+                email_message.send()
+
+                return redirect("/contacto/?valido")
+            except Exception as e:
+                print(f"Error al enviar el correo: {e}")
+                return redirect("/contacto/?novalido")
+        
+        else:
+            return redirect("/contacto/?novalido")
+    
     return render(request, 'ContactApp/contact.html', {'contact_form': contact_form})
