@@ -4,25 +4,22 @@
 
 {% block content %} 
 
-{% for service in all_services %}
-
-<section class="page-section clearfix">
-  <div class="container">
-    <div class="intro">
-      <img
-        class="intro-img img-fluid mb-3 mb-lg-0 rounded"
-        src="{{service.image.url}}"
-        alt="" style="width: 50%;"/>
-      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-        <h2 class="section-heading mb-4">
-          <span class="section-heading-lower">{{ service.name }}</span>
-          <span class="section-heading-upper">{{ service.description }}</span>
-        </h2>
+<div class="container m-4" id='shop-container'>
+  <div class="row">
+    {% for product in all_products %}
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top h-50">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.prize }}&nbsp;€</p>
+          </div>
+        </div>
       </div>
-    </div>
+    {% endfor %}
   </div>
-</section>
+</div>
 
-{% endfor %} 
+
 
 {% endblock %}
