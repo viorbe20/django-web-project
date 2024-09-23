@@ -43,7 +43,7 @@ class Cart:
         self.session["cart"] = self.cart
         self.session.modified = True
     
-    def delete_product(self, product):
+    def remove_product(self, product):
         """
         Remove a product from the cart entirely based on its product ID.
         """
