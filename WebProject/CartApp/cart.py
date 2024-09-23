@@ -8,11 +8,13 @@ class Cart:
         self.session = request.session
         cart = self.session.get("cart")
         
-        if not cart:
+        if cart is None:
             # If no cart exists in the session, create a new empty cart
-            cart = self.session["cart"] = {}
-        else:
-            self.cart = cart
+            cart = {}
+        
+        # Always set self.cart
+        self.cart = cart
+
     
     def add_product(self, product):
         """

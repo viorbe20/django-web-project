@@ -1,0 +1,46 @@
+<table class="table table-bordered" style="color: white;">
+    <thead>
+        <tr>
+            <th colspan="5" class="text-center">Carro de compras</th>
+        </tr>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Agregar</th>
+            <th>Quitar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if request.session.cart %}
+        {% for key, value in request.session.cart.items %}
+            <tr>
+                <td>{{ value.name }}</td>  
+                <td>{{ value.quantity }}</td> 
+                <td>{{ value.prize }}</td> 
+                <td>
+                    <a href="{% url 'cart:agregar' key %}" class="btn btn-sm success">Agregar</a> 
+                </td>
+                <td>
+                    <a href="{% url 'cart:reducir' key %}" class="btn btn-sm success">Quitar</a> 
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="5">
+                    <div class="alert alert-danger text-center">
+                        Sin productos
+                    </div>
+                </td>
+            </tr>
+        {% endif %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <p style="color:white;">Total: {{ total_cart_amount }} €</p>
+            </td>
+        </tr>
+    </tfoot>
+</table>
