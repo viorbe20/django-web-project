@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-5">
             <h2 class="text-center mb-4">Regístrate</h2>
-            <form method="post" action="" style='background-color: #f8f9fa'>
+            <form method="post" action="" style='background-color: #f8f9fa; color:black'>
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button type="submit" class="btn btn-success btn-block w-100 mt-3">Regístrate</button>
@@ -17,28 +17,3 @@
     </div>
 </div>
 {% endblock %}
-
-
-{% comment %} {% extends "WebProjectApp/base.html" %} 
-
-{% load static %} 
-
-{% load crispy_forms_tags %}
-
-{% block content %}
-
-<form method='post' action=''>
-
-    {% csrf_token %}
-
-    <div style="width: 75%; margin: auto;">
-
-    {{form|crispy}}
-
-    <button type='submit' class='btn btn-success'>Regístrate</button>
-
-    </div>
-
-</form>
-
-{% endblock %} {% endcomment %}

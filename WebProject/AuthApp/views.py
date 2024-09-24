@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib import messages
 
 class UserAuthentication(View):
@@ -22,3 +22,7 @@ class UserAuthentication(View):
                 messages.error(request, form.error_messages[msg])
                 
             return render(request, 'AuthApp/authentication.html', {'form': form})
+    
+def user_logout(request):
+    logout(request)
+    return redirect('Inicio')
