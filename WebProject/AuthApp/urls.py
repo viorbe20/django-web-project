@@ -1,6 +1,6 @@
 from django.urls import path
-from AuthApp import views
+from .views import UserAuthentication
 
 urlpatterns = [
-    path('', views.authentication, name="Autenticacion"),
+    path('', UserAuthentication.as_view(), name="Autenticacion"),
 ]

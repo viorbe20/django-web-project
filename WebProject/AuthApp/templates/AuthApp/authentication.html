@@ -3,6 +3,14 @@
 {% load static %} 
 
 {% block content %}
-autenticación
+
+<form method='post' action=''>
+
+    {% csrf_token %}
+    {{form}}
+
+    <button type='submit' class='btn btn-success'>Regístrate</button>
+
+</form>
 
 {% endblock %}
