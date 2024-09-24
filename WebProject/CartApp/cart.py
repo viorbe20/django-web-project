@@ -31,10 +31,11 @@ class Cart:
                 "image": product.image.url,
             }
         else:
-            # If the product is already in the cart, increase its quantity
+            # If the product is already in the cart, increase its quantity and the prize
             for key, value in self.cart.items():
                 if key == str(product.id):
                     value["quantity"] += 1
+                    value["prize"] = float(product.prize) * value["quantity"]
                     break
         self.save_cart()
         
@@ -50,9 +51,10 @@ class Cart:
         Remove a product from the cart entirely based on its product ID.
         """
         product_id = str(product.id)
+        
         if product_id in self.cart:
-            # Delete the product from the cart if it exists
-            del self.cart[product_id]
+            # Delete the product from the cart if it exists 
+            del self.cart[product_id] 
             self.save_cart()
     
     def reduce_quantity(self, product):
@@ -62,11 +64,12 @@ class Cart:
         """
         for key, value in self.cart.items():
             if key == str(product.id):
-                # Decrease the product's quantity
+                # Decrease the product's quantity and prize
                 value["quantity"] -= 1
+                value["prize"] -= float(product.prize)
                 # If quantity is less than 1, remove the product from the cart
                 if value["quantity"] < 1:
-                    self.delete_product(product)
+                    self.remove_product(product)
                 break
         self.save_cart()
                 

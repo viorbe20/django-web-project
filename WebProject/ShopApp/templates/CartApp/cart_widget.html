@@ -12,6 +12,7 @@
     </thead>
     <tbody>
         {% if request.session.cart %}
+        
         {% for key, value in request.session.cart.items %}
             <tr>
                 <td>{{ value.name }}</td>  
@@ -25,10 +26,9 @@
                         <i class="fas fa-minus">-</i>
                     </a>
                 </td>
-                
-                
             </tr>
         {% endfor %}
+
         {% else %}
             <tr>
                 <td colspan="5">
