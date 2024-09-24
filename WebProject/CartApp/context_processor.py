@@ -6,8 +6,6 @@ def total_cart_amount(request):
         cart = request.session.get("cart", {})
         
         # Add all the car items prizes
-        # for key, value in cart.items():
-        #     total += float(value["prize"]) * value["quantity"] 
         for key, value in request.session['cart'].items():
             total = total + float(value['prize'])
         
