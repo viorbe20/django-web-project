@@ -7,9 +7,17 @@
 <div class="container m-10">
   
   <div>
+
+    {% if request.user.is_authenticated %}
     
-    {% include "CartApp/cart_widget.html" %}
-  
+      {% include "CartApp/cart_widget.html" %}
+
+    {% else %}
+    
+      Regístrate para ver el carro
+
+    {% endif%}
+
   </div>
 
   <div class="row">

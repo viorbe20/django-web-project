@@ -4,15 +4,14 @@ class Cart:
         Initialize the cart object with the request. 
         If a cart does not exist in the session, create an empty one.
         """
-        # self.request = request
-        # self.session = request.session
-        # cart = self.session.get("cart")
+        self.request = request
+        self.session = request.session
+        cart = self.session.get("cart")
         
-        # if cart is None:
-        #     # If no cart exists in the session, create a new empty cart
-        #     cart = {}
+        # If no cart exists in the session, create a new empty cart
+        if cart is None:
+            cart = {}
         
-        # # Always set self.cart
         self.cart = cart
 
     
