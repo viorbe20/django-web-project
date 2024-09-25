@@ -15,26 +15,26 @@ class Cart:
         self.cart = cart
 
     
-    def add_product(self, product):
+    def add_item(self, item):
         """
-        Add a product to the cart. If the product is already in the cart,
+        Add a item to the cart. If the item is already in the cart,
         increment its quantity. Otherwise, add it with quantity set to 1.
         """
-        if str(product.id) not in self.cart.keys():
-            # Add a new product to the cart with initial quantity 1
-            self.cart[product.id] = {
-                "product_id": product.id,
-                "name": product.name,
-                "prize": float(product.prize),
+        if str(item.id) not in self.cart.keys():
+            # Add a new item to the cart with initial quantity 1
+            self.cart[item.id] = {
+                "item_id": item.id,
+                "name": item.name,
+                "prize": float(item.prize),
                 "quantity": 1,
-                "image": product.image.url,
+                "image": item.image.url,
             }
         else:
-            # If the product is already in the cart, increase its quantity and the prize
+            # If the item is already in the cart, increase its quantity and the prize
             for key, value in self.cart.items():
-                if key == str(product.id):
+                if key == str(item.id):
                     value["quantity"] += 1
-                    value["prize"] = float(product.prize) * value["quantity"]
+                    value["prize"] = float(item.prize) * value["quantity"]
                     break
         self.save_cart()
         
@@ -45,30 +45,30 @@ class Cart:
         self.session["cart"] = self.cart
         self.session.modified = True
     
-    def remove_product(self, product):
+    def remove_item(self, item):
         """
-        Remove a product from the cart entirely based on its product ID.
+        Remove a item from the cart entirely based on its item ID.
         """
-        product_id = str(product.id)
+        item_id = str(item.id)
         
-        if product_id in self.cart:
-            # Delete the product from the cart if it exists 
-            del self.cart[product_id] 
+        if item_id in self.cart:
+            # Delete the item from the cart if it exists 
+            del self.cart[item_id] 
             self.save_cart()
     
-    def reduce_quantity(self, product):
+    def reduce_quantity(self, item):
         """
-        Decrease the quantity of a product in the cart. 
-        If the quantity goes below 1, remove the product from the cart.
+        Decrease the quantity of a item in the cart. 
+        If the quantity goes below 1, remove the item from the cart.
         """
         for key, value in self.cart.items():
-            if key == str(product.id):
-                # Decrease the product's quantity and prize
+            if key == str(item.id):
+                # Decrease the item's quantity and prize
                 value["quantity"] -= 1
-                value["prize"] -= float(product.prize)
-                # If quantity is less than 1, remove the product from the cart
+                value["prize"] -= float(item.prize)
+                # If quantity is less than 1, remove the item from the cart
                 if value["quantity"] < 1:
-                    self.remove_product(product)
+                    self.remove_item(item)
                 break
         self.save_cart()
                 

@@ -3,22 +3,22 @@ from ShopApp.models import *
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 
-def add_product(request, product_id):
+def add_item(request, item_id):
     cart = Cart(request)
-    product = get_object_or_404(Product, id=product_id)
-    cart.add_product(product)
+    item = get_object_or_404(Item, id=item_id)
+    cart.add_item(item)
     return redirect("Tienda")
 
-def remove_product(request, product_id):
+def remove_item(request, item_id):
     cart = Cart(request)
-    product = Product.objects.get(id=product_id)
-    cart.remove_product(product)
+    item = Item.objects.get(id=item_id)
+    cart.remove_item(item)
     return redirect("Tienda")
 
-def reduce_quantity(request, product_id):
+def reduce_quantity(request, item_id):
     cart = Cart(request)
-    product = Product.objects.get(id=product_id)
-    cart.reduce_quantity(product)
+    item = Item.objects.get(id=item_id)
+    cart.reduce_quantity(item)
     return redirect("Tienda")
 
 def empty_cart(request):

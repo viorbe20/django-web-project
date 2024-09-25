@@ -1,11 +1,11 @@
 from django.contrib import admin
 from .models import *
 
-class ProductCategoryAdmin(admin.ModelAdmin):
+class ItemCategoryAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
 
-class ProductAdmin(admin.ModelAdmin):
+class ItemAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
 
-admin.site.register(ProductCategory, ProductCategoryAdmin)
-admin.site.register(Product, ProductAdmin)
+admin.site.register(ItemCategory, ItemCategoryAdmin)
+admin.site.register(Item, ItemAdmin)

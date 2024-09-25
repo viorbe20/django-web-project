@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'AuthApp',
     'crispy_forms',
     'crispy_bootstrap5',
+    'OrdersApp',
 ]
 
 MIDDLEWARE = [
