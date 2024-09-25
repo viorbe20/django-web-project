@@ -29,14 +29,14 @@ class Order(models.Model):
 class OrderItems(models.Model):
     '''List that contains the details of each order item'''
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    item_id = models.ForeignKey(Item, on_delete=models.CASCADE)
-    order_id = models.ForeignKey(Order, on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return f"{self.quantity} unidades de {self.item_id.name}"
+        return f"{self.quantity} unidades de {self.item.name}"
     
     class Meta:
         db_table = 'order_items'

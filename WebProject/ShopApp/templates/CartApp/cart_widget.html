@@ -49,7 +49,7 @@
         {% if request.session.cart.items %}
         <tr>
             <td colspan="5">
-                <a href="" class="btn btn-success" style="background-color: green; color: white; width:45%;">
+                <a href="{% url 'procesar_pedido' %}" class="btn btn-success" style="background-color: green; color: white; width:45%;">
                     Hacer pedido
                 </a>
             </td>
