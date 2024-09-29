@@ -1,3 +1,9 @@
+:root {
+  --yellow-dark:#F59C28;
+  --yellow-light:#f8b358;
+  --green-baseline:  #248809;
+}
+
 body {
   font-family: 'Lora';
   background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg_main.jpg");
@@ -24,11 +30,14 @@ p {
 }
 
 .site-heading {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   text-transform: uppercase;
-  line-height: 1;
-  font-family: 'Raleway';
+  background-color: var(--yellow-dark);
+  color: #f9f9f9;
+  font-family: "Lato";
+  text-align: center;
+  padding: 1.5%;
 }
 
 .site-heading .site-heading-upper {
@@ -80,7 +89,7 @@ p {
 }
 
 #mainNav {
-  background-color: rgba(24, 64, 8);
+  background-color: var(--green-baseline);
   font-family: 'Raleway';
 }
 
@@ -278,3 +287,32 @@ ul.errorlist{
   color: red;
 }
 
+/*Mine*/
+
+#logout-box {
+  margin-right:1rem;
+
+  .btn-danger {
+    font-weight: bold;
+  }
+    
+  .btn:hover {
+    opacity: 0.9; 
+  }
+}
+
+#login-box {
+  margin-right:1rem;
+  
+  .btn-primary {
+    font-weight: bold;
+  }
+  
+  .btn-secondary {
+    font-weight: bold;
+  }
+  
+  .btn:hover {
+    opacity: 0.9; 
+  }
+}

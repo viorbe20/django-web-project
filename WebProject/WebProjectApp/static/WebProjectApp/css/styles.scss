@@ -1,3 +1,15 @@
+$yellow-dark: #F59C28;
+$yellow-light: #f7b054;
+
+
+.site-heading {
+  background-color: $yellow-dark;
+  color: #f9f9f9;
+  font-family: "Lato"; 
+  text-align: center;
+  padding: 1.5%;
+}
+
 // Contact form
 .contact-form-container {
   max-width: 500px;
