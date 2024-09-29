@@ -1,7 +1,8 @@
 :root {
   --yellow-dark:#F59C28;
   --yellow-light:#f8b358;
-  --green-baseline:  #248809;
+  --purple-baseline:  #9AA5E9;
+  --pink-baseline: #ec87c5;
 }
 
 body {
@@ -89,7 +90,7 @@ p {
 }
 
 #mainNav {
-  background-color: var(--green-baseline);
+  background-color: var(--purple-baseline);
   font-family: 'Lato';
 }
 
@@ -143,7 +144,7 @@ p {
     left: 600;
     width: 60%;
     margin-top: 3rem;
-    background-color: rgba(24, 64, 8);
+    background-color: var(--pink-baseline);
     color: cornsilk;
     position: absolute;
   }
@@ -171,7 +172,7 @@ p {
   position: relative;
   padding: 3rem;
   margin: 0.5rem;
-  background-color: rgba(24, 64, 8);
+  background-color: var(--pink-baseline);
   color: cornsilk;
 }
 
@@ -238,7 +239,7 @@ p {
 }
 
 .footer {
-   background-color: rgba(24, 64, 8, 0.8);
+  background-color: var(--purple-baseline);
 }
 
 
