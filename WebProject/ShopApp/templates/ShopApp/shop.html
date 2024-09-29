@@ -14,8 +14,9 @@
 
     {% else %}
     
+      <div id='login-warning'>
       Regístrate para ver el carro
-
+      </div>
     {% endif%}
 
   </div>
@@ -26,7 +27,7 @@
         <div class="card h-100">
           <img src="{{ item.image.url }}" alt="{{ item.name }}" class="card-img-top h-50">
           <div class="card-body text-center">
-            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-title">{{ item.name }}</p>
             <p class="card-text">{{ item.prize }}&nbsp;€</p>
           </div>
 

@@ -290,6 +290,18 @@ ul.errorlist{
 
 /*Mine*/
 
+#login-warning {
+  text-align: center;
+  background-color: red;
+  margin: 2% 36%;
+  padding: 1%;
+  border-radius: 50px;
+}
+
+#cart-table {
+  background-color: var(--pink-baseline);
+}
+
 #logout-box {
   margin-right:1rem;
 
