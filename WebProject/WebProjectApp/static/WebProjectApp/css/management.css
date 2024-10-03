@@ -290,6 +290,39 @@ ul.errorlist{
 
 /*Mine*/
 
+#login-form, #auth-form{
+  background-color: #f9f9f9;
+  padding: 10% 5%;
+}
+
+#auth-form, label{
+  font-size: 1rem;
+}
+
+#auth-form, #id_username_helptext{
+  font-size: .6rem;
+}
+
+#auth-form, #id_username_helptext{
+  font-size: .6rem;
+}
+
+#shop-grid-items .card-body{
+  background-color: rgb(242, 245, 240);
+  color: black;
+  font-size: 1.3rem;
+}
+
+#shop-grid-items .card-footer{
+  background-color: var(--yellow-dark);
+}
+
+#shop-grid-items .card-footer a{
+  color: #ffffff;
+  font-size: larger;
+  font-weight: bold;
+}
+
 #login-warning {
   text-align: center;
   background-color: red;
@@ -299,8 +332,35 @@ ul.errorlist{
 }
 
 #cart-table {
-  background-color: var(--pink-baseline);
+  background-color: #f9f9f9;
+  margin: 2% 0;
 }
+
+#cart-table > tfoot {
+  background-color: var(--yellow-dark);
+}
+
+#cart-table > tfoot > tr > td {
+  text-align: center;
+}
+
+#cart-title {
+  background-color: var(--yellow-dark);
+}
+
+#cart-title-categories, th {
+  background-color: grey;
+  text-align: center;
+  color:rgb(242, 245, 240);
+}
+
+#no-products-alert > div{
+  border-radius: 50px; 
+  background-color: red;
+  margin: 0px 40%;
+  padding: 2%;
+  color:rgb(242, 245, 240);
+  font-weight: bold;
 
 #logout-box {
   margin-right:1rem;

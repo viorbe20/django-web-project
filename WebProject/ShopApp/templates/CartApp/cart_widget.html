@@ -1,9 +1,9 @@
 <table class="table table-bordered" id='cart-table'>
     <thead>
         <tr>
-            <th colspan="5" class="text-center">Carro de compras</th>
+            <th id='cart-title' colspan="5" class="text-center">Carro de compras</th>
         </tr>
-        <tr>
+        <tr id='cart-title-categories'>
             <th>Producto</th>
             <th>Cantidad</th>
             <th>Precio</th>
@@ -31,8 +31,8 @@
 
         {% else %}
             <tr>
-                <td colspan="5">
-                    <div class="alert alert-danger text-center">
+                <td colspan="5" id='no-products-alert'>
+                    <div class="text-center">
                         Sin productos
                     </div>
                 </td>

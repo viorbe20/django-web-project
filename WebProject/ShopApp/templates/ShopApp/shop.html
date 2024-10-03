@@ -13,7 +13,6 @@
       {% include "CartApp/cart_widget.html" %}
 
     {% else %}
-    
       <div id='login-warning'>
       Regístrate para ver el carro
       </div>
@@ -21,7 +20,7 @@
 
   </div>
 
-  <div class="row">
+  <div class="row" id="shop-grid-items">
     {% for item in all_items %}
       <div class="col-md-3 mb-4">
         <div class="card h-100">

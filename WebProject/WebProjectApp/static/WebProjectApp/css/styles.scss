@@ -13,12 +13,12 @@ $yellow-light: #f7b054;
 // Contact form
 .contact-form-container {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 3% auto;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+  
   .contact-form {
     display: flex;
     flex-direction: column;
