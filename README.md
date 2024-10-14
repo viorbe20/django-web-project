@@ -133,3 +133,12 @@ App destinada a la parte de `servicios`. De esta forma podremos acceder también
 
 #### Blog App
 App destinada a la parte de `blog` para poder insertar noticias. Las entradas del blog tendrán categorías. 
+
+#### PIxabay
+https://pixabay.com/es/photos/computadora-portátil-5673901/
+https://pixabay.com/es/photos/computadora-portátil-1483974/
+
+#### Intalaciones 
+pip install django-crispy-forms
+
+pip install decouple
